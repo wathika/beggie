@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+#navbarSupportedContent {
+  align-content: center;
+}
+
+.center {
+  justify-content: center;
+}
+
+.navbar {
+  background-color: rgba(251,248,245,0.98);
+  border-bottom: rgba(0,0,0,0.1);
+}
