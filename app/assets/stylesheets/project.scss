@@ -50,7 +50,6 @@ main.container {
   }
 }
 
-
 .project-popover {
   width: 220px;
   position: absolute;
@@ -61,4 +60,8 @@ main.container {
   z-index: 1;
   background-color: #fff;
   padding: 1rem 1rem 2rem;
+}
+
+.is-hidden {
+  display: none;
 }
