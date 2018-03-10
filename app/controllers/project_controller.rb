@@ -25,6 +25,7 @@ class ProjectController < ApplicationController
 
   def chat
     @project = Project.find(params[:id])
+    @message 
   end
 
   private

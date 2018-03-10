@@ -84,3 +84,13 @@
     text-decoration: underline;
   }
 }
+
+.chat-wrapper {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+
+  .chat-form {
+    margin-top: auto;
+  }
+}
