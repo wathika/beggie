@@ -6,10 +6,10 @@
   <div class="row home-header">
     <div class="col-md-4 mr-auto">
       <button class="btn btn-primary mr-auto" id="new_project_button">New</button>
-      <div class="project-popover is-hidden" id="new_project_popover">
+      <div class="project-popover " id="new-project-popover">
         <%= form_with(model: @project) do |f|  %>
           <div class="form-group">
-            <%= f.text_field :name,  class: "form-control mr-sm-2", type: "text", placeholder: "Name this project", autofocus: true %>
+            <%= f.text_field :name,  class: "form-control mr-sm-2", id: "project-name-input", type: "text", placeholder: "Name this project", autofocus: true %>
           </div>
           <%= f.submit "Save", class: "btn btn-outline-success my-2 my-sm-0" %>
           <button class="btn btn-secondary" id="cancel_project_popover">Close</button>
@@ -24,7 +24,9 @@
     </div>
   </div>
 
-  <div class="row home-projects">
-    <%= render 'project_card' %>
+  <div class="row home-projects" id="project-list">
+    <% @projects.each do |project| %>
+      <%= render 'project_card', project: project %>
+    <% end %>
   </div>
 </div>
