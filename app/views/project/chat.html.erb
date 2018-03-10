@@ -5,7 +5,7 @@
   <div class="chat-wrapper feature-card">
     <div class="chat-contents" id="chat-contents">
     </div>
-      <%= form_for '@message', remote: true, url: "/messages", html: {id: "new-message-form", class: "chat-form"} do |f| %>
+      <%= form_for @message, remote: true, url: "/messages", html: {id: "new-message-form", class: "chat-form"} do |f| %>
         <div class="form-group">
           <%= f.text_field :content, class: "form-control", id: "messgae-input", placeholder: "Say something riveting!", autoFocus: true %>
         </div>
