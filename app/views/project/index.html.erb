@@ -6,12 +6,14 @@
   <div class="row home-header">
     <div class="col-md-4 mr-auto">
       <button class="btn btn-primary mr-auto" id="new_project_button">New</button>
-      <div class="project-popover is-hidden" id="new_project_popover">
-        <form>
-          <input class="form-control mr-sm-2" type="text" placeholder="Name this project">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Save</button>
-          <button class="btn btn-secondary" id="cancel_project_popover" type="">Close</button>
-        </form>
+      <div class="project-popover " id="new_project_popover">
+        <%= form_with(model: @project) do |f|  %>
+          <div class="form-group">
+            <%= f.text_field :name,  class: "form-control mr-sm-2", type: "text", placeholder: "Name this project", autofocus: true %>
+          </div>
+          <%= f.submit "Save", class: "btn btn-outline-success my-2 my-sm-0" %>
+          <button class="btn btn-secondary" id="cancel_project_popover">Close</button>
+        <% end %>
       </div>
     </div>
     <div class="col-md-4">
