@@ -1,7 +1,7 @@
 class ProjectController < ApplicationController
   def index
     @projects = Project.all
-    
+
     @project = Project.new
   end
 
@@ -17,6 +17,10 @@ class ProjectController < ApplicationController
       end
     end
 
+  end
+
+  def view
+    @project = Project.find(params[:id])
   end
 
   private
