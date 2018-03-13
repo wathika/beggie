@@ -2,9 +2,12 @@ class MessageController < ApplicationController
   def create
     @message = Message.new(message_params)
 
-    if @message.save
-      format.js
+    respond_to do |format|
+      if @message.save
+        format.js
+      end
     end
+
   end
 
   protected

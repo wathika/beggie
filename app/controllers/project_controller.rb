@@ -24,8 +24,9 @@ class ProjectController < ApplicationController
   end
 
   def chat
-    @project = Project.find(params[:id])
     @message = Message.new
+    @messages = Message.where project_id: params[:id]
+    @project = Project.find(params[:id])
   end
 
   private
