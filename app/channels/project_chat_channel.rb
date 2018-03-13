@@ -8,7 +8,7 @@ class ProjectChatChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
   end
 
-  def send_message
+  def send_message(data)
     project_id = data["project_id"]
     content = data["content"]
 

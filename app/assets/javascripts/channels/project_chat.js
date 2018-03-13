@@ -5,6 +5,7 @@ document.addEventListener('turbolinks:load', function(){
   const messageContainer = document.getElementById('chat-contents')
 
   if(window.projectId && messageForm) {
+    console.log("ID FOUND!")
     App.project_chat = App.cable.subscriptions.create(
       {
         channel: "ProjectChatChannel",
@@ -19,8 +20,10 @@ document.addEventListener('turbolinks:load', function(){
       disconnected: function () {
 
       },
-      received: function () {
-
+      received: function (data) {
+        var messageNode = document.createElement('div')
+        messageNode.innerHTML = data.message
+        messageContainer.appendChild(messageNode)
       },
 
       sendMessage: function (content) {
