@@ -8,7 +8,7 @@
         <%= render 'message/message.html', message: message %>
       <% end %>
     </div>
-      <%= form_for @message, remote: true, url: "/messages", html: {id: "new-message-form", class: "chat-form"} do |f| %>
+      <%= form_for @message, html: {id: "new-message-form", class: "chat-form"} do |f| %>
         <%= f.hidden_field :project_id, value: @project.id %>
         <div class="form-group">
           <%= f.text_field :content, class: "form-control", id: "message-input", placeholder: "Say something riveting!", autoFocus: true %>
